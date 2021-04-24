@@ -2,7 +2,9 @@
 function longer() {
     console.log('My name is Harshit');
 }
-longer();
+longer(); 
+*/ 
+/*
 function fruitProcessor(apples, oranges) {
     console.log(apples, oranges);
     const juice = `Juice with ${apples} apples and ${oranges} oranges.`;
@@ -12,8 +14,9 @@ const applejuice = fruitProcessor(5, 0);
 console.log(applejuice);
 
 const appleOrangeJuice = fruitProcessor(2, 4);
-console.log(appleOrangeJuice);
-
+console.log(appleOrangeJuice); 
+*/
+/*
 function calcAge1(birthyear) {
     return 2037 - birthyear;
 }
@@ -23,7 +26,7 @@ console.log(by1);
 const calcAge3 = birthYear => 2037 - birthYear;
 const age3 = calcAge3(2003);
 console.log(age3);
-
+*/
 //Function calling another function
 function cutFruitPieces(fruit) {
     return fruit * 4;
@@ -72,7 +75,7 @@ const age33 = calcAge(years4[years4.length - 1]);
 console.log(age1, age2, age3);
 console ages = [calcAge(years4[0]), calcAge(years4[1]), calcAge(years4[years4.length - 1])];
 console.log(ages);
-*/
+
 /*
 //Basic array operations
 const newfriends = ['Ritesh', 'Aditya', 'Sanket'];
