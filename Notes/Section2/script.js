@@ -71,7 +71,7 @@ console.log(age - 1991 > age - 2019);
 
 const averageAge = (ageHA + ageAD) / 2;
 console.log(ageHA, ageAD, averageAge); 
-*/
+
 
 //Strings 
 const firstName = 'Harshit';
@@ -92,4 +92,191 @@ console.log(`String with \n\ multiple \n\ lines`);
 console.log(`String 
 With 
 Multilpe 
-Lines`);
+Lines`); 
+
+
+//if/else statements 
+
+const age = 10;
+const isOldEnough = age >= 18;
+
+if (isOldEnough) {
+    console.log('You are elgiblie for a driving license');
+}
+else {
+    console.log('You are not elgiblie for a driving license!');
+    const yearleft = 18 - age;
+    console.log(`You have ${yearleft} years left to get a driving license`);
+}
+
+const birthYear = 2003;
+let century;
+if (birthYear <= 2000) {
+    century = 20;
+} else {
+    century = 21;
+}
+console.log(century);
+
+
+//Type Conversion 
+
+const intputYear = '2021';
+console.log(Number(intputYear), intputYear);
+console.log(Number(intputYear) + 1);
+console.log(typeof NaN);
+console.log(String(22), 22);
+
+//Type corection 
+console.log('I am ' + 18 + ' years old');
+console.log('23' - '10' - 3);
+console.log('23' / '2');
+
+let n = '1' + 1;
+n = n - 1;
+console.log(n);
+
+
+//5  falsy values: 0, '', null, undefined, NaN 
+
+console.log(Boolean(0));
+console.log(Boolean(''));
+console.log(Boolean(null));
+console.log(Boolean(undefined));
+console.log(Boolean({}));
+console.log(Boolean('Harshit'));
+
+const money = 10;
+if (money) {
+    console.log('Dont spend it alll');
+}
+else {
+    console.log('You should get a job.');
+}
+
+let height = 0;
+if (height) {
+    console.log('You are tall enough');
+} else {
+    console.log('You are not tall enough');
+}
+
+const age = 18;
+if (age === 18) {
+    console.log('I am now an adult');
+}
+
+const num = prompt("What's your num?");
+if (num == 7) {
+    console.log("Thats Awersome");
+}
+else if (num == 3) {
+    console.log("Thats great");
+}
+else {
+    console.log("Ok");
+}
+if (num !== 7) console.log("Call 007");
+
+
+const hasDrivenLicense = true;
+const hasGoodVision = false;
+console.log(hasDrivenLicense && hasGoodVision);
+console.log(hasDrivenLicense || hasGoodVision);
+console.log(!hasDrivenLicense);
+
+const shouldDrive = hasDrivenLicense && hasGoodVision
+
+if (shouldDrive) {
+    console.log('You can drive');
+} else {
+    console.log('You cannot drive');
+}
+
+const isTired = true;
+console.log(hasDrivenLicense && hasGoodVision && isTired);
+if (hasDrivenLicense && hasGoodVision && isTired) {
+    console.log('You can drive');
+} else {
+    console.log('You cannot drive');
+}
+*/
+//Dolphins Bonus Data 2 
+const dscore1 = 97;
+const dscore2 = 112;
+const dscore3 = 101;
+const dscoreAvg = (dscore1 + dscore2 + dscore3) / 3;
+console.log(dscoreAvg);
+
+//Koalas Bonus Data 2
+const kscore1 = 109;
+const kscore2 = 95;
+const kscore3 = 106;
+const kscoreAvg = (kscore1 + kscore2 + kscore3) / 3;
+console.log(kscoreAvg);
+
+if (dscoreAvg >= 100 && kscoreAvg >= 100) {
+    if (dscoreAvg > kscoreAvg) {
+        console.log('Dolphins win');
+    }
+    else if (dscoreAvg === kscoreAvg) {
+        console.log('Match Draw');
+    }
+    else {
+        console.log('Koalas win');
+    }
+}
+else {
+    console.log('Both teams does dot qualify');
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
