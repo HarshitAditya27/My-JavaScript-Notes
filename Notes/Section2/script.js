@@ -200,45 +200,62 @@ if (hasDrivenLicense && hasGoodVision && isTired) {
 } else {
     console.log('You cannot drive');
 }
-*/
-//Dolphins Bonus Data 2 
-const dscore1 = 97;
-const dscore2 = 112;
-const dscore3 = 101;
-const dscoreAvg = (dscore1 + dscore2 + dscore3) / 3;
-console.log(dscoreAvg);
 
-//Koalas Bonus Data 2
-const kscore1 = 109;
-const kscore2 = 95;
-const kscore3 = 106;
-const kscoreAvg = (kscore1 + kscore2 + kscore3) / 3;
-console.log(kscoreAvg);
+//Switch Statements
+const day = 'thursday';
 
-if (dscoreAvg >= 100 && kscoreAvg >= 100) {
-    if (dscoreAvg > kscoreAvg) {
-        console.log('Dolphins win');
-    }
-    else if (dscoreAvg === kscoreAvg) {
-        console.log('Match Draw');
-    }
-    else {
-        console.log('Koalas win');
-    }
+switch (day) {
+    case 'monday':
+        console.log('Padhai Time');
+        break;
+    case 'tuesday':
+        console.log('Study UX');
+        break;
+    case 'wednesday':
+        console.log('Study JavaScript');
+        break;
+    case 'thursday':
+    case 'friday':
+        console.log('Study React');
+        break;
+    case 'satuday':
+    case 'sunday':
+        console.log('Learn about APIs')
+        break;
+    default:
+        console.log('I dont know what to do');
+
+}
+
+const me = 'Harshit';
+console.log(`I'm ${me}, a ${2021 - 2003} old Web Developer`);
+
+
+const age = 19;
+const play = age >= 18 ? 'I will play Spider Man in PS5' : 'I will play hide and seak ';
+console.log(play);
+
+let anotherplay;
+if (age >= 18) {
+    anotherplay = 'I will play Spider Man in PS5';
 }
 else {
-    console.log('Both teams does dot qualify');
+    anotherplay = 'I will play hide and seak';
 }
+console.log(anotherplay);
+*/
 
 
+const bill = 430;
+const tip = (bill >= 50 && bill <= 300) ? bill * 0.15 : bill * 0.2;
+const totalbill = bill + tip;
+console.log(`The bill was ${bill}, the tip is ${tip}, and the total is ${totalbill}`);
 
-
-
-
-
-
-
-
+/* 
+Data 1: The bill was 275, the tip is 41.25, and the total is 316.25. 
+Data 2: The bill was 40, the tip is 8, and the total is 48. 
+Data 3: The bill was 430, the tip is 86, and the total is 516.
+*/
 
 
 
