@@ -1,0 +1,1 @@
+const description = 'India is in Asia, and its 138 cores people speak Hindi';

@@ -283,17 +283,3 @@ Data 3: The bill was 430, the tip is 86, and the total is 516.
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
