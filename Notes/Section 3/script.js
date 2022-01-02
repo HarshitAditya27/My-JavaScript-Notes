@@ -232,5 +232,94 @@ console.log(harshit.calcAge());
 console.log(harshit.age);
 
 console.log(harshit.getSummary());
-*/
 
+
+//Loops 
+for (let rep = 1; rep <= 10; rep++) {
+    console.log('Yo I am Harshit');
+}
+
+const harshit = [
+    'Harshit',
+    'Aditya',
+    2022 - 2003,
+    'student',
+    ['Michelle', 'Ned', 'Eddie']
+];
+
+const types = []
+
+for (let i = 0; i < harshit.length; i++) {
+    //Reading from Harshit array
+    console.log(harshit[i], typeof harshit[i]);
+    //Finding types array
+    types.push(types[i] = typeof harshit[i]);
+}
+
+console.log(types);
+const years = [2003, 2000, 2001, 1999, 2002];
+const ages = [];
+for (let i = 0; i < years.length; i++) {
+    ages.push(ages[i] = 2022 - years[i]);
+}
+
+console.log(ages);
+
+//Cotinue and break statements
+//Cotinue statement skips the rest of the code in the loop and goes to the next iteration
+//Break statement breaks the loop 
+console.log('--- ONLY STRINGS ---')
+for (let i = 0; i < harshit.length; i++) {
+    if (typeof harshit[i] !== 'string') continue;
+    console.log(harshit[i]);
+}
+
+console.log('--- BREAK WITH NUMBER ---')
+for (let i = 0; i < harshit.length; i++) {
+    if (typeof harshit[i] === 'number') break;
+    console.log(harshit[i]);
+} 
+
+
+const harshit = [
+    'Harshit',
+    'Aditya',
+    2022 - 2003,
+    'student',
+    ['Michelle', 'Ned', 'Eddie']
+];
+
+for (let i = harshit.length - 1; i >= 0; i--) {
+    console.log(harshit[i]);
+}
+
+for (let exercise = 1; exercise < 4; exercise++) {
+    console.log(`------------- Starting Exercise ${exercise}`);
+    for (let rep = 1; rep < 6; rep++) {
+        console.log(`Lifting weight repetition ${rep}`);
+    }
+} 
+
+
+//While Loop 
+for (let rep = 1; rep <= 10; rep++) {
+    console.log('Yo I am Harshit');
+}
+
+let rep = 1;
+while (rep <= 10) {
+    console.log('Yo I am Harshit');
+    rep++;
+}
+
+let dice = Math.floor(Math.random() * 6) + 1;
+console.log(dice);
+
+while (dice !== 6) {
+    console.log(`You rolled a ${dice}`);
+    dice = Math.floor(Math.random() * 6) + 1;
+    if (dice === 6) {
+        console.log('Loop is about to end .........');
+    }
+}
+*/
