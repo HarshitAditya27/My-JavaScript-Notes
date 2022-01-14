@@ -1,9 +1,5 @@
 'use strict';
 
-// Data needed for a later exercise
-const flights =
-  '_Delayed_Departure;fao93766109;txl2133758440;11:25+_Arrival;bru0943384722;fao93766109;11:45+_Delayed_Arrival;hel7439299980;fao93766109;12:05+_Departure;fao93766109;lis2323639855;12:30';
-
 // Data needed for first part of the section
 const restaurant = {
   name: 'Classico Italiano',
@@ -526,9 +522,9 @@ console.log(new Set('harshitaditya').size);
 */
 
 //Maps: Fundamental
-/* 
+/*
 const rest = new Map();
-rest.set('name', 'DPizza'); //add key value pair 
+rest.set('name', 'DPizza'); //add key value pair
 rest.set(1, 'Main Road Ranchi');
 console.log(rest.set(2, 'Harmu Ranchi'));
 rest.set(3, 'Lalpur Ranchi');
@@ -552,11 +548,11 @@ console.log(rest);
 //rest.clear();
 console.log(rest.size)
 const arr = [1, 2];
-console.log(rest.get(arr)); 
+console.log(rest.get(arr));
 */
 
 //Maps: Iteration 
-
+/*
 const question = new Map([
   ['question', 'What is the best programming language in the world?'],
   [1, 'C'],
@@ -570,7 +566,7 @@ const question = new Map([
 
 console.log(question);
 
-//Convert object to map 
+//Convert object to map
 console.log(Object.entries(openingHours));
 const hours = new Map(Object.entries(openingHours));
 console.log(hours);
@@ -582,8 +578,243 @@ for (const [key, value] of question) {
 const answer = Number(prompt('Your Answer'));
 console.log(question.get(answer === question.get('correct')));
 
-//Convert map to array 
+//Convert map to array
 console.log([...question]);
 console.log(question.entries());
 console.log([...question.keys()]);
 console.log([...question.values()]);
+*/
+
+//Coding Challenge 3 
+/*
+const gameEvents = new Map([
+  [17, 'GOAL'],
+  [36, 'Substitution'],
+  [47, 'GOAL'],
+  [61, 'Substitution'],
+  [64, 'Yellow Card'],
+  [69, 'Red Card'],
+  [70, 'Substitution'],
+  [72, 'Substitution'],
+  [76, 'GOAL'],
+  [80, 'GOAL'],
+  [92, 'Yellow Card'],
+]);
+
+//1.
+const events = [...new Set(gameEvents.values())];
+console.log(events);
+
+//2.
+gameEvents.delete(64);
+
+//3.
+console.log(
+  `An event happened, on average, every ${90 / gameEvents.size} minutes`
+);
+const time = [...gameEvents.keys()].pop();
+console.log(time);
+console.log(
+  `An event happened, on average, every ${time / gameEvents.size} minutes`
+);
+
+//4
+for (const [min, event] of gameEvents) {
+  const half = min <= 45 ? 'first' : 'second';
+  console.log(`[${half} HALF] ${min}: ${event}`);
+}
+*/
+
+//Working with Strings - Part 1 
+/*
+const airplane = 'TAP Air Portugal';
+const plane = 'A320';
+
+console.log(plane[0]);
+console.log(plane[1]);
+console.log(plane[2]);
+console.log(plane[3]);
+console.log('B737'[1]);
+
+console.log(airplane.length);
+console.log('B737'.length);
+
+console.log(airplane.indexOf('r'));
+console.log(airplane.lastIndexOf('r'));
+console.log(airplane.indexOf('portugal'));
+
+console.log(airplane.slice(4));
+console.log(airplane.slice(4, 7));
+
+console.log(airplane.slice(0, airplane.indexOf(' ')));
+console.log(airplane.slice(airplane.lastIndexOf('') + 1));
+
+console.log(airplane.slice(-2));
+console.log(airplane.slice(1, -1));
+
+const checkMiddleSeat = function (seat) {
+  const s = seat.slice();
+  if (s === 'B' || s === 'E')
+    console.log('You got the middle seat');
+  else
+    console.log('You got lucky');
+};
+
+checkMiddleSeat('11B');
+checkMiddleSeat('23C');
+checkMiddleSeat('3E');
+
+console.log(new String('Harshit'));
+console.log(typeof new String('Harshit'));
+console.log(typeof new String('Harshit').slice(1));
+*/
+
+//Working with Strings - Part 2  
+/*
+const airline = 'TAP Air Portugal';
+const plane = 'A320';
+
+console.log(airline.toUpperCase());
+console.log(airline.toLowerCase());
+
+//Fix capitalization in name
+const passenger = 'StArlOrD';
+const passengerLower = passenger.toLowerCase();
+const passengerCorrect = passengerLower[0].toUpperCase() + passengerLower.slice(1);
+console.log(passengerCorrect);
+
+//Comparing Emails
+const email = 'hello@jonas.io';
+const loginEmail = 'Hello@Starlord.io \n';
+const lowerEmail = loginEmail.toLowerCase();
+//const trimmedEmail = lowerEmail.trim();
+//console.log(trimmedEmail);
+//console.log(email === trimmedEmail);
+const normalizedEmail = lowerEmail.toLowerCase().trim();
+console.log(normalizedEmail);
+console.log(email === normalizedEmail);
+
+//replacing
+const priceGB = '288,97$';
+const price = priceGB.replace('$', 'Rs').replace(',', '.');
+console.log(price);
+
+const announcement = 'All passengers come to boarding door 23. Boarding door 23!';
+console.log(announcement.replace('door', 'darwaja'));
+console.log(announcement.replaceAll('door', 'gate'));
+console.log(announcement.replace(/door/g, 'darwaja'));
+
+//Booleans
+const planeno = 'Airbus A320nco';
+console.log(planeno.includes('nco'));
+console.log(planeno.includes('Boeing'));
+console.log(planeno.startsWith('Air'));
+console.log(planeno.endsWith('nco'));
+
+if (planeno.startsWith('Airbus') && planeno.endsWith('nco')) {
+  console.log('This is an Airbus A320nco');
+}
+
+const checkBaggage = function (items) {
+  const baggage = items.toLowerCase();
+  if (baggage.includes('knife') || baggage.includes('gun')) {
+    console.log('You are NOT allowed to carry knives or guns');
+  } else {
+    console.log('You are allowed to carry this item');
+  }
+}
+
+checkBaggage('I have a laptop, some Food and a pocket Knife');
+checkBaggage('Kukure and Pizza');
+checkBaggage('I have a gun and knife for protection :) ');
+*/
+
+//Working with Strings - Part 3 
+/*
+console.log('a+very+ncie+string'.split('+'));
+console.log('Harshit Aditya'.split(' '));
+
+const [firstName, lastName] = 'Harshit Aditya'.split(' ');
+
+const newName = ['Mr.', firstName, lastName.toUpperCase()].join(' ');
+console.log(newName);
+
+const capitalName = function (name) {
+  const names = name.split(' ');
+  const namesUpper = [];
+
+  for (const n of names) {
+    //namesUpper.push(n[0].toUpperCase() + n.slice(1));
+    namesUpper.push(n.replace(n[0], n[0].toUpperCase()));
+  }
+  console.log(namesUpper.join(' '));
+}
+
+capitalName('harshit aditya');
+
+//Padding
+const message = 'Go to gate 23!';
+console.log(message.padStart(25, '+'));
+console.log(message.padEnd(25, '+'));
+console.log('Harshit'.padStart(25, '+'));
+
+const markCreditCard = function (number) {
+  const str = number + '';
+  const last = str.slice(-4);
+  return last.padStart(str.length, '*');
+
+}
+console.log(markCreditCard(456546546646));
+console.log(markCreditCard(456546546646534654654));
+console.log(markCreditCard('65654654654654677884'));
+
+//Repeat
+const message2 = 'Bad weather... All Departures delayed...';
+console.log(message2.repeat(3));
+
+const planesInLine = function (n) {
+  console.log(`There are ${n} planes in line ${'✈️'.repeat(n)}`);
+}
+
+planesInLine(5);
+planesInLine(10);
+planesInLine(15);
+*/
+
+//Coding Challenge 4 
+/* 
+document.body.append(document.createElement('textarea'));
+
+document.body.append(document.createElement('button'));
+
+document.querySelector('button').addEventListener('click', function () {
+  const text = document.querySelector('textarea').value;
+  const rows = text.split('\n');
+  console.log(rows);
+
+  for (const [i, row] of rows.entries()) {
+    const [first, second] = row.toLowerCase().trim().split('_');
+    const output = `${first}${second.replace(
+      second[0],
+      second[0].toUpperCase()
+    )}`;
+    console.log(`${output.padEnd(20, ' ')}${'😃'.repeat(i + 1)}`);
+  }
+}); 
+*/
+
+// Data needed for a later exercise
+//String Methods Exercise 
+const flights =
+  '_Delayed_Departure;fao93766109;txl2133758440;11:25+_Arrival;bru0943384722;fao93766109;11:45+_Delayed_Arrival;hel7439299980;fao93766109;12:05+_Departure;fao93766109;lis2323639855;12:30';
+
+const getCode = str => str.slice(0, 3).toUpperCase();
+
+for (const flight of flights.split('+')) {
+  const [type, from, to, time] = flight.split(';');
+  const output = `${type.startsWith('_Delayed') ? '🔴' : ''} ${type.replaceAll('_', ' ')} ${getCode(from)} ${getCode(to)} (${time.replace(
+    ':',
+    'h'
+  )})`.padStart(36);
+  console.log(output);
+}
