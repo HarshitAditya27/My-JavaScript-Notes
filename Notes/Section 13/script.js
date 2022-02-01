@@ -8,6 +8,10 @@ const btnsOpenModal = document.querySelectorAll('.btn--show-modal');
 
 const btnScrollTo = document.querySelector('.btn--scroll-to');
 const section1 = document.querySelector('#section--1');
+const nav = document.querySelector('.nav');
+const tabs = document.querySelectorAll('.operations__tab');
+const tabsContainer = document.querySelector('.operations__tab-container');
+const tabsContent = document.querySelectorAll('.operations__content');
 
 ///////////////////////////////////////
 // Modal window
@@ -71,7 +75,7 @@ document.querySelectorAll('.nav__link').forEach(function (el) {
 // 1. Add event listener to common parent element 
 // 2. Determine what element originated the event 
 
-document.querySelector('.nav__list').addEventListener('click', function (e) {
+document.querySelector('.nav__links').addEventListener('click', function (e) {
   console.log(e.target);
 
   //Matching strategy 
@@ -82,6 +86,62 @@ document.querySelector('.nav__list').addEventListener('click', function (e) {
   }
 });
 
+//Tabled component 
+
+tabsContainer.addEventListener('click', function (e) {
+  const clicked = e.target.closest('.operations__tab');
+  console.log(clicked);
+
+  //Grad clause 
+  if (!clicked) return;
+
+
+  //Remove Active classes
+  tabs.forEach(t => t.classList.remove('operations__tab--active'));
+  tabsContent.forEach(c => c.classList.remove('operations__content--active'));
+  clicked.classList.add('operations__tab--active');
+
+  //Active content area  
+  console.log(clicked.dataset.tab);
+  document
+    .querySelector(`.operations__content--${clicked.dataset.tab}`)
+    .classList.add('operations__content--active');
+});
+//tabs.forEach(t => t.addEventListener('click', () =>
+//console.log('TAB')
+//));
+
+// Menu fade animation 
+const handlerHover = function (e) {
+  console.log(this);
+  if (e.target.classList.contains('nav__link')) {
+    const link = e.target;
+    const siblings = link.closest('.nav')
+      .querySelectorAll('.nav__link');
+    const logo = link.closest('.nav').querySelector('img');
+
+    siblings.forEach(el => {
+      if (el !== link) el.style.opacity = this;
+    });
+    logo.style.opacity = this;
+  }
+}
+
+nav.addEventListener('mouseover', handlerHover.bind(0.5))
+
+nav.addEventListener('mouseout', handlerHover.bind(1));
+
+// Sticky Navigation
+const initialCoords = nav.getBoundingClientRect();
+console.log(initialCoords);
+window.addEventListener('scroll', function () {
+  console.log(window.scrollY)
+
+  if (window.scrollY > initialCoords.top)
+    nav.classList.add('sticky')
+  else nav.classList.remove('sticky')
+})
+
 /////////////////////////////////////////// 
 /*
 console.log(document.documentElement);
@@ -90,7 +150,6 @@ console.log(document.head);
 const header = document.querySelector('.header');
 const allSections = document.querySelectorAll('section');
 console.log(allSections);
-
 document.getElementById('section--1');
 const allButtons = document.getElementsByTagName('button');
 console.log(allButtons);
@@ -198,12 +257,12 @@ const alertH1 = function (e) {
 h1.addEventListener('mouseenter', alertH1);
 
 setTimeout(() => h1.removeEventListener('mouseenter', alertH1), 3000); 
-*/
+
 //Event Propagation in practice 
 //rgb(225,225,225) 
 const randomInt = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
 const randomColor = () => {
-  `rgb(${randomInt(0, 225)},${randomInt(0, 225)},${randomInt(0, 225)})`;
+  `rgb(${ randomInt(0, 225) }, ${ randomInt(0, 225) }, ${ randomInt(0, 225) })`;
 }
 console.log(randomColor(0, 225));
 
@@ -224,4 +283,34 @@ document.querySelector('.nav__links').addEventListener('click', function (e) {
 document.querySelector('.nav').addEventListener('click', function (e) {
   this.style.backgroundColor = randomColor();
   console.log('NAV', e.target, e.currentTarget)
+}); 
+
+
+const h1 = document.querySelector('h1');
+
+//Going downwards: child 
+console.log(h1.querySelectorAll('.highlight'));
+console.log(h1.childNodes);
+console.log(h1.children);
+h1.firstElementChild.style.color = 'white';
+h1.lastElementChild.style.color = 'oragered';
+
+//Going upwards: parent 
+console.log(h1.parentNode)
+console.log(h1.parentElement)
+
+h1.closest('.header').style.backgroundColor = 'var (--gradient-secondary)';
+h1.closest('.h1').style.backgroundColor = 'var (--gradient-primary)';
+
+//Going sideways: sibling 
+console.log(h1.previousElementSibling);
+console.log(h1.nextElementSibling);
+
+console.log(h1.previousSibling);
+console.log(h1.nextSibling);
+
+console.log(h1.parentElement.children);
+[...h1.parentElement.children].forEach(function (el) {
+  if (el !== h1) el.style.transform = 'scale(0.5)'
 });
+*/
