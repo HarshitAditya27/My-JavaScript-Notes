@@ -2,7 +2,7 @@
 function sayMyName(){
     console.log("Harshit");
 } 
-sayMyName(); 
+sayMyName(); // Reference: sayMyName, (): Execution
 console.log(sayMyName); 
 */ 
 
